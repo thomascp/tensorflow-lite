@@ -247,6 +247,30 @@ if(TFLITE_ENABLE_GPU)
     FILTER "(_test)\\.(cc|h)$"
   )
   populate_tflite_source_vars(
+    "delegates/gpu/gl" TFLITE_DELEGATES_GPU_GL_SRCS
+    FILTER "(_test)\\.(cc|h)$"
+  )
+  populate_tflite_source_vars(
+    "delegates/gpu/gl/compiler" TFLITE_DELEGATES_GPU_GL_COMPILER_SRCS
+    FILTER "(_test)\\.(cc|h)$"
+  )
+  populate_tflite_source_vars(
+    "delegates/gpu/gl/converters" TFLITE_DELEGATES_GPU_GL_CONVERTERS_SRCS
+    FILTER "(_test)\\.(cc|h)$"
+  )
+  populate_tflite_source_vars(
+    "delegates/gpu/gl/kernels" TFLITE_DELEGATES_GPU_GL_KERNELS_SRCS
+    FILTER "(_test)\\.(cc|h)$"
+  )
+  populate_tflite_source_vars(
+    "delegates/gpu/gl/runtime" TFLITE_DELEGATES_GPU_GL_RUNTIME_SRCS
+    FILTER "(_test)\\.(cc|h)$"
+  )
+  populate_tflite_source_vars(
+    "delegates/gpu/gl/workgroups" TFLITE_DELEGATES_GPU_GL_WORKGROUPS_SRCS
+    FILTER "(_test)\\.(cc|h)$"
+  )
+  populate_tflite_source_vars(
     "delegates/gpu/common/default" TFLITE_DELEGATES_GPU_COMMON_DEFAULT_SRCS
     FILTER "(_test)\\.(cc|h)$"
   )
@@ -294,6 +318,12 @@ if(TFLITE_ENABLE_GPU)
     ${TFLITE_DELEGATES_GPU_CL_SRCS}
     ${TFLITE_DELEGATES_GPU_CL_DEFAULT_SRCS}
     ${TFLITE_DELEGATES_GPU_CL_KERNELS_SRCS}
+    ${TFLITE_DELEGATES_GPU_GL_SRCS}
+    ${TFLITE_DELEGATES_GPU_GL_COMPILER_SRCS}
+    ${TFLITE_DELEGATES_GPU_GL_CONVERTERS_SRCS}
+    ${TFLITE_DELEGATES_GPU_GL_KERNELS_SRCS}
+    ${TFLITE_DELEGATES_GPU_GL_RUNTIME_SRCS}
+    ${TFLITE_DELEGATES_GPU_GL_WORKGROUPS_SRCS}
     ${TFLITE_DELEGATES_GPU_COMMON_DEFAULT_SRCS}
     ${TFLITE_DELEGATES_GPU_COMMON_MEMORY_MANAGEMENT_SRCS}
     ${TFLITE_DELEGATES_GPU_COMMON_SELECTORS_SRCS}
@@ -361,7 +391,7 @@ if(TFLITE_ENABLE_GPU)
      target_link_libraries(${lib_name})
    endforeach()
 endif()
-  list(APPEND TFLITE_TARGET_PUBLIC_OPTIONS "-DCL_DELEGATE_NO_GL" "-DEGL_NO_X11")
+  #list(APPEND TFLITE_TARGET_PUBLIC_OPTIONS "-DCL_DELEGATE_NO_GL" "-DEGL_NO_X11")
   list(APPEND TFLITE_TARGET_DEPENDENCIES
     absl::any
     absl::flat_hash_map
