@@ -245,17 +245,18 @@ def _impl(ctx):
                         flag_group(
                             flags = [
                                 "-isystem",
-                                "%{AARCH64_COMPILER_PATH}%/lib/gcc/aarch64-linux-gnu/8.3.0/include",
+                                "%{AARCH64_COMPILER_PATH}%/lib/gcc/aarch64-none-linux-gnu/10.3.1/include",
                                 "-isystem",
-                                "%{AARCH64_COMPILER_PATH}%/lib/gcc/aarch64-linux-gnu/8.3.0/include-fixed",
+                                "%{AARCH64_COMPILER_PATH}%/lib/gcc/aarch64-none-linux-gnu/10.3.1/include-fixed",
                                 "-isystem",
-                                "%{AARCH64_COMPILER_PATH}%/aarch64-linux-gnu/include/c++/8.3.0/",
+                                "%{AARCH64_COMPILER_PATH}%/aarch64-none-linux-gnu/include/c++/10.3.1/",
                                 "-isystem",
-                                "%{AARCH64_COMPILER_PATH}%/aarch64-linux-gnu/libc/usr/include/",
+                                "%{AARCH64_COMPILER_PATH}%/aarch64-none-linux-gnu/libc/usr/include/",
                                 "-isystem",
                                 "%{PYTHON_INCLUDE_PATH}%",
                                 "-isystem",
                                 "/usr/include/",
+                                "--sysroot=/tmp/virtualizer_ws/test6_use_start_point_fixed_vdk/start_point_fixed/software/mini-aarch64-linux/buildroot-2022.02.6/output/host/aarch64-buildroot-linux-gnu/sysroot"
                             ],
                         ),
                     ],
@@ -470,11 +471,12 @@ def _impl(ctx):
 
     if (ctx.attr.cpu == "aarch64"):
         cxx_builtin_include_directories = [
-                "%{AARCH64_COMPILER_PATH}%/lib/gcc/aarch64-linux-gnu/8.3.0/include",
-                "%{AARCH64_COMPILER_PATH}%/lib/gcc/aarch64-linux-gnu/8.3.0/include-fixed",
-                "%{AARCH64_COMPILER_PATH}%/aarch64-linux-gnu/include/c++/8.3.0/",
-                "%{AARCH64_COMPILER_PATH}%/aarch64-linux-gnu/libc/usr/include/",
+                "%{AARCH64_COMPILER_PATH}%/lib/gcc/aarch64-none-linux-gnu/10.3.1/include",
+                "%{AARCH64_COMPILER_PATH}%/lib/gcc/aarch64-none-linux-gnu/10.3.1/include-fixed",
+                "%{AARCH64_COMPILER_PATH}%/aarch64-none-linux-gnu/include/c++/10.3.1/",
+                "%{AARCH64_COMPILER_PATH}%/aarch64-none-linux-gnu/libc/usr/include/",
                 "/usr/include",
+                "/tmp/virtualizer_ws/test6_use_start_point_fixed_vdk/start_point_fixed/software/mini-aarch64-linux/buildroot-2022.02.6/output/host/aarch64-buildroot-linux-gnu/sysroot/usr/include"
             ]
     elif (ctx.attr.cpu == "armhf"):
         cxx_builtin_include_directories = [
@@ -495,44 +497,44 @@ def _impl(ctx):
         tool_paths = [
             tool_path(
                 name = "ar",
-                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-linux-gnu-ar",
+                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-none-linux-gnu-ar",
             ),
             tool_path(name = "compat-ld", path = "/bin/false"),
             tool_path(
                 name = "cpp",
-                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-linux-gnu-cpp",
+                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-none-linux-gnu-cpp",
             ),
             tool_path(
                 name = "dwp",
-                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-linux-gnu-dwp",
+                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-none-linux-gnu-dwp",
             ),
             tool_path(
                 name = "gcc",
-                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-linux-gnu-gcc",
+                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-none-linux-gnu-gcc",
             ),
             tool_path(
                 name = "gcov",
-                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-linux-gnu-gcov",
+                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-none-linux-gnu-gcov",
             ),
             tool_path(
                 name = "ld",
-                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-linux-gnu-ld",
+                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-none-linux-gnu-ld",
             ),
             tool_path(
                 name = "nm",
-                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-linux-gnu-nm",
+                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-none-linux-gnu-nm",
             ),
             tool_path(
                 name = "objcopy",
-                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-linux-gnu-objcopy",
+                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-none-linux-gnu-objcopy",
             ),
             tool_path(
                 name = "objdump",
-                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-linux-gnu-objdump",
+                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-none-linux-gnu-objdump",
             ),
             tool_path(
                 name = "strip",
-                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-linux-gnu-strip",
+                path = "%{AARCH64_COMPILER_PATH}%/bin/aarch64-none-linux-gnu-strip",
             ),
         ]
     elif (ctx.attr.cpu == "armhf"):
