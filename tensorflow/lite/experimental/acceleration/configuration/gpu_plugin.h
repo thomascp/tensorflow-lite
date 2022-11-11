@@ -18,7 +18,7 @@ limitations under the License.
 // This file provides the GpuPlugin class, which implements the
 // TFLite Delegate Plugin for the GPU Delegate.
 
-#if defined(__ANDROID__) || defined(CL_DELEGATE_NO_GL)
+#if defined(__ANDROID__) || defined(CL_DELEGATE_NO_GL) || defined(__aarch64__)
 #define TFLITE_SUPPORTS_GPU_DELEGATE 1
 #endif
 

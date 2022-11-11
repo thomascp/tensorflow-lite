@@ -209,6 +209,7 @@ selects.config_setting_group(
     name = "supports_gpu_delegate",
     match_any = [
         "//tensorflow:android",
+        "//tensorflow:linux_aarch64",
         "//tensorflow/lite/delegates/gpu/cl:opencl_delegate_no_gl",
     ],
 )
