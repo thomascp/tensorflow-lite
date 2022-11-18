@@ -12,7 +12,7 @@ def gpu_delegate_linkopts():
             "-lGLESv2",
         ],
         "//conditions:default": [
-            "--sysroot=/tmp/virtualizer_ws/test6_use_start_point_fixed_vdk/start_point_fixed/software/mini-aarch64-linux/buildroot-2022.02.6/output/host/aarch64-buildroot-linux-gnu/sysroot",
+            "--sysroot=/tmp/virtualizer_ws/test8_gpu_nommu/MVP/software/mini-aarch64-linux/buildroot-2022.02.6/output/host/aarch64-buildroot-linux-gnu/sysroot",
             "-lEGL",
             "-lGLESv2",
         ],

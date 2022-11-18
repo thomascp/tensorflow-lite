@@ -256,7 +256,7 @@ def _impl(ctx):
                                 "%{PYTHON_INCLUDE_PATH}%",
                                 "-isystem",
                                 "/usr/include/",
-                                "--sysroot=/tmp/virtualizer_ws/test6_use_start_point_fixed_vdk/start_point_fixed/software/mini-aarch64-linux/buildroot-2022.02.6/output/host/aarch64-buildroot-linux-gnu/sysroot"
+                                "--sysroot=/tmp/virtualizer_ws/test8_gpu_nommu/MVP/software/mini-aarch64-linux/buildroot-2022.02.6/output/host/aarch64-buildroot-linux-gnu/sysroot"
                             ],
                         ),
                     ],
@@ -476,7 +476,7 @@ def _impl(ctx):
                 "%{AARCH64_COMPILER_PATH}%/aarch64-none-linux-gnu/include/c++/10.3.1/",
                 "%{AARCH64_COMPILER_PATH}%/aarch64-none-linux-gnu/libc/usr/include/",
                 "/usr/include",
-                "/tmp/virtualizer_ws/test6_use_start_point_fixed_vdk/start_point_fixed/software/mini-aarch64-linux/buildroot-2022.02.6/output/host/aarch64-buildroot-linux-gnu/sysroot/usr/include"
+                "/tmp/virtualizer_ws/test8_gpu_nommu/MVP/software/mini-aarch64-linux/buildroot-2022.02.6/output/host/aarch64-buildroot-linux-gnu/sysroot/usr/include"
             ]
     elif (ctx.attr.cpu == "armhf"):
         cxx_builtin_include_directories = [
